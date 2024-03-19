@@ -1,0 +1,52 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es6": true // ES6 환경을 추가합니다.
+  },
+  "extends": [
+    "eslint:recommended",   // eslint의 권장 규칙을 사용합니다.
+    "plugin:vue/vue3-recommended",  // Vue3 권장 규칙을 사용합니다.
+    "plugin:prettier/recommended",
+    "@vue/eslint-config-prettier/skip-formatting"   // prettier와 충돌하는 규칙을 무시합니다. -- 나중 구성이 이전 구성보다 우선순위가 높습니다.
+  ],
+  // 0 === off, 1 === warn, 2 === error
+  "rules": {
+    "no-console": "off",
+    // "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off", 개발자 모드 제한두지 않음.
+    "no-debugger": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "vue": "never"
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true, // 싱글 쿼트 사용
+        "semi": false, // 세미콜론을 사용하지 않음
+        "trailingComma": "none", // trailing comma 설정. 옵션으로는 "none" 또는 "all"이 있습니다.
+        "printWidth": 120, // printWidth 120
+        "tabWidth": 2,
+        "endOfLine": "auto"
+      }
+    ],
+    // 추가 규칙
+    "no-void": "off",
+    "no-param-reassign": "off", // 함수 재할당 OFF
+    "no-use-before-define": "off", // 선언전 함수 사용 금지 OFF
+    "camelcase": "off", // camelcase 사용 가능
+//    "import/extensions": "off", // 확장자 표시 OFF
+    "import/no-unresolved": "off" // 존재하는 모듈 확인 OFF
+  },
+  "parserOptions": {
+    "parser": "@babel/eslint-parser",
+    "requireConfigFile": false,
+    "ecmaVersion": 2018, // ES6 및 그 이후 버전을 위한 설정입니다. 필요에 따라 숫자를 조정할 수 있습니다.
+    "sourceType": "module" // ES6 모듈을 사용하도록 설정합니다.
+  }
+}
