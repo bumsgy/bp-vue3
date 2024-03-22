@@ -9,16 +9,10 @@ import { ref } from 'vue'
 // --- || import project constants    || ------------------------------ //
 
 // --- || import Opensource lib       || ------------------------------ //
-
-
 </script>
 
 <template>
-  <div>
-    대쉬보오오오오오오~~ 드
-  </div>
+  <div>대쉬보오오오오오오~~ 드</div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

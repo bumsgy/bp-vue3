@@ -1,9 +1,10 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-import VueDevTools from 'vite-plugin-vue-devtools';
+import { defineConfig } from 'vite'
+import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
+import VueDevTools from 'vite-plugin-vue-devtools'
+import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 // import { HOST } from '@/utils/Host.js';
 
@@ -13,15 +14,27 @@ export default defineConfig({
     proxy: {
       '/login': {
         target: `15.164.225.22:8088`,
-        changeOrigin: true,
+        changeOrigin: true
         // rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   },
   plugins: [
-    vue(),
-    vueJsx(),
-    VueDevTools(),
+    Vue({
+      template: { transformAssetUrls }
+    }),
+    Vuetify(),
+    // Components(),
+    // ViteFonts({
+    //   google: {
+    //     families: [{
+    //       name: 'Roboto',
+    //       styles: 'wght@100;300;400;500;700;900',
+    //     }],
+    //   },
+    // }),
+    VueJsx(),
+    VueDevTools()
   ],
   resolve: {
     alias: {

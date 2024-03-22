@@ -1,14 +1,9 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <div>
-    <h1>여긴 Gnb</h1>
+  <div style="border: white">
+    <h1>여긴 Gnb1231231231232131232</h1>
   </div>
 </template>
 
-
-<style scoped>
-
-</style>
+<style scoped></style>

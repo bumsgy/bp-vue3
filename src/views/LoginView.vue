@@ -39,7 +39,7 @@ const login = () => {
     <h1>로그인</h1>
     <h1>{{ loginId }}</h1>
     <input v-model="loginId" type="text" placeholder="아이디" />
-    <input v-model="loginPwd" type="password" placeholder="비밀번호" />
+    <input v-model="loginPwd" type="password" placeholder="비밀번호" @keydown.enter="login" />
     <button @click="login">로그인</button>
   </div>
 </template>

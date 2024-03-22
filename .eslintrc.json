@@ -10,20 +10,18 @@
     "plugin:prettier/recommended",
     "@vue/eslint-config-prettier/skip-formatting"   // prettier와 충돌하는 규칙을 무시합니다. -- 나중 구성이 이전 구성보다 우선순위가 높습니다.
   ],
+  "plugins": [
+    "vue", // Vue 플러그인을 사용합니다.
+    "prettier", // prettier 플러그인을 사용합니다.
+    "import"
+  ],
   // 0 === off, 1 === warn, 2 === error
   "rules": {
     "no-console": "off",
     // "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off", 개발자 모드 제한두지 않음.
     "no-debugger": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "import/extensions": [
-      "error",
-      "always",
-      {
-        "js": "never",
-        "vue": "never"
-      }
-    ],
+    "import/extensions": [ "error", "ignorePackages" ],     // import 시 확장자를 반드시 사용하도록 설정합니다.
     "prettier/prettier": [
       "error",
       {

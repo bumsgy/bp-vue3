@@ -1,9 +1,7 @@
 <script setup>
 // --- || import vue lib              || ------------------------------- //
-import { ref } from 'vue'
 import SnbFrame from '@/components/layouts/SnbFrame.vue'
 import GnbFrame from '@/components/layouts/GnbFrame.vue'
-import { RouterView } from 'vue-router'
 
 // --- || import design lib           || ------------------------------ //
 
@@ -15,29 +13,20 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>
-    <h1>로그인 상태 레이아웃</h1>
-    <header>
-      <!--    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />-->
-
-      <!--    <div class="wrapper">-->
-      <!--      <HelloWorld msg="You did it!" />-->
-
-      <!--      <nav>-->
-      <!--        <RouterLink to="/">Home</RouterLink>-->
-      <!--        <RouterLink to="/about">About</RouterLink>-->
-      <!--      </nav>-->
-      <!--    </div>-->
+  <v-app>
+    <!--    <v-layout class="rounded rounded-md">-->
+    <v-app-bar title="Application bar">
       <gnb-frame />
-    </header>
+    </v-app-bar>
 
-    <snb>
-      <snb-frame />
-    </snb>
-    <slot />
-  </div>
+    <snb-frame />
+
+    <!--    <v-main class="d-flex align-center justify-center" style="min-height: 300px">-->
+    <v-main>
+      <slot />
+    </v-main>
+    <!--    </v-layout>-->
+  </v-app>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

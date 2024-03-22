@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <div>
@@ -8,9 +6,6 @@
     <h1>플러그인</h1>
     <h1>설정</h1>
   </div>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

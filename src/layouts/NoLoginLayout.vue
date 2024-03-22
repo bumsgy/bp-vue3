@@ -12,12 +12,11 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div>
-    <h1>비 로그인 레이아웃</h1>
-    <slot />
-  </div>
+  <v-app>
+    <v-main>
+      <slot />
+    </v-main>
+  </v-app>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
