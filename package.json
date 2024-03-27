@@ -16,7 +16,9 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "axios": "^1.6.7",
+    "lodash": "^4.17.21",
     "pinia": "^2.1.7",
+    "pinia-plugin-store": "^2.2.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vuetify": "^3.5.9"
@@ -29,6 +31,7 @@
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/test-utils": "^2.4.4",
+    "crypto-js": "^4.2.0",
     "cypress": "^13.6.6",
     "eslint": "^8.49.0",
     "eslint-plugin-cypress": "^2.15.1",

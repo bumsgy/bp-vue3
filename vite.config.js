@@ -14,14 +14,14 @@ export default defineConfig({
     proxy: {
       '/login': {
         target: `15.164.225.22:8088`,
-        changeOrigin: true
+        changeOrigin: true,
         // rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
+      },
+    },
   },
   plugins: [
     Vue({
-      template: { transformAssetUrls }
+      template: { transformAssetUrls },
     }),
     Vuetify(),
     // Components(),
@@ -34,11 +34,11 @@ export default defineConfig({
     //   },
     // }),
     VueJsx(),
-    VueDevTools()
+    VueDevTools(),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
 })

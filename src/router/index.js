@@ -14,7 +14,7 @@ const router = createRouter({
       redirect: '/dashboard',
     },
     ...samplePages,
-  ]
+  ],
 })
 
 export default router
