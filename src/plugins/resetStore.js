@@ -8,6 +8,7 @@
  * (Copyright 2021. NMPLUS Co., Ltd. All rights reserved | Confidential)
  */
 import { cloneDeep } from 'lodash'
+
 export default function resetStore({ store }) {
   const initialState = cloneDeep(store.state)
 

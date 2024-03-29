@@ -8,12 +8,8 @@
  * (Copyright 2021. NMPLUS Co., Ltd. All rights reserved | Confidential)
  */
 import router from '@/router/index.js'
-import { useLoginStore } from '@/stores/login.js'
+import useLoginStore from '@/stores/login.js'
 import pinia from '@/plugins/encStore.js'
-
-router.beforeRouteLeave((to, from, next) => {
-  console.log(`to : ${JSON.stringify(to.meta)}`)
-})
 
 router.beforeEach((to, from, next) => {
   console.log(`to : ${JSON.stringify(to.meta)}`)

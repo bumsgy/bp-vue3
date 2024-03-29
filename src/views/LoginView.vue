@@ -9,7 +9,7 @@ import { onMounted, ref } from 'vue'
 // --- || import project constants    || ------------------------------ //
 
 // --- || import project lib          || ------------------------------ //
-import { useLoginStore } from '@/stores/login.js'
+import useLoginStore from '@/stores/login.js'
 
 // --- || Variable Setup              || ------------------------------ //
 const loginStore = useLoginStore()

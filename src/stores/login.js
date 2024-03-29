@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
-import axios from '@/utils/AxiosInstance.js'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import axios from '@/utils/AxiosInstance.js'
 import StringUtils from '@/utils/StringUtils.js'
 
-export const useLoginStore = defineStore('loginStore', () => {
+const useLoginStore = defineStore('loginStore', () => {
   const userInfo = ref({
     accntId: '',
     accntPw: '',
@@ -25,7 +25,7 @@ export const useLoginStore = defineStore('loginStore', () => {
       accntPw: pwd,
     })
 
-    const success = (response) => {
+    const success = response => {
       console.log('로그인 성공')
       const { accntId, accntRole, token } = response.data
 
@@ -38,8 +38,8 @@ export const useLoginStore = defineStore('loginStore', () => {
       router.push({ name: 'dashboard' })
     }
 
-    const error = (error) => {
-      alert(`로그인이 필요합니다. : error : ${error}`)
+    const error = err => {
+      alert(`로그인이 필요합니다. : error : ${err}`)
       // window.location.href = "/";
     }
 
@@ -56,3 +56,4 @@ export const useLoginStore = defineStore('loginStore', () => {
 
   return { isLoggedIn, userInfo, login }
 })
+export default useLoginStore

@@ -1,6 +1,6 @@
 <script setup>
 // --- || import vue lib              || ------------------------------- //
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 
 // --- || import design lib           || ------------------------------ //
 
@@ -9,7 +9,7 @@ import { onMounted, ref } from 'vue'
 // --- || import project constants    || ------------------------------ //
 
 // --- || import project lib          || ------------------------------ //
-import { useLoginStore } from '@/stores/login.js'
+import useLoginStore from '@/stores/login.js'
 import router from '@/router/index.js'
 
 // --- || Variable Setup              || ------------------------------ //

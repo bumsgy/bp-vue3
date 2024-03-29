@@ -4,42 +4,61 @@
     "node": true,
     "es6": true // ES6 환경을 추가합니다.
   },
-  "extends": [
-    "eslint:recommended",   // eslint의 권장 규칙을 사용합니다.
-    "plugin:vue/vue3-recommended",  // Vue3 권장 규칙을 사용합니다.
-    "plugin:prettier/recommended",
-    "@vue/eslint-config-prettier/skip-formatting"   // prettier와 충돌하는 규칙을 무시합니다. -- 나중 구성이 이전 구성보다 우선순위가 높습니다.
-  ],
   "plugins": [
     "vue", // Vue 플러그인을 사용합니다.
     "prettier", // prettier 플러그인을 사용합니다.
     "import"
+  ],
+  "extends": [
+    "eslint:recommended",   // eslint의 권장 규칙을 사용합니다.
+    "plugin:vue/vue3-recommended",  // Vue3 권장 규칙을 사용합니다.
+    "plugin:import/recommended", // import 플러그인을 사용합니다.
+    "airbnb-base", // airbnb 규칙을 사용합니다.,
+    // BSSeo : 앞에 plugin 붙이는건 뭐지?
+    // plugin으로 선언되어 있는 것들에 대해 앞에 plugin을 붙여서 사용하는 것인듯... 한데...
+    "plugin:prettier/recommended", // eslint-config-prettier 플러그인을 사용합니다.
+    // BSSeo : node_modules에 해당 경로 js 파일이 있음.
+    "@vue/eslint-config-prettier/skip-formatting"   // prettier와 충돌하는 규칙을 무시합니다. -- 나중 구성이 이전 구성보다 우선순위가 높습니다.
   ],
   // 0 === off, 1 === warn, 2 === error
   "rules": {
     "no-console": "off",
     // "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off", 개발자 모드 제한두지 않음.
     "no-debugger": "off",
+    // 테스트 또는 개발 환경을 구성하는 파일에서는 devDevpendencies를 사용할 수 있습니다.
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "import/extensions": [ "error", "ignorePackages" ],     // import 시 확장자를 반드시 사용하도록 설정합니다.
-    "prettier/prettier": [
-      "error",
+    // import 시 확장자를 반드시 사용하도록 설정합니다.
+    "import/extensions": [ "error", "ignorePackages",
       {
-        "singleQuote": true, // 싱글 쿼트 사용
-        "semi": false, // 세미콜론을 사용하지 않음
-        "trailingComma": "none", // trailing comma 설정. 옵션으로는 "none" 또는 "all"이 있습니다.
-        "printWidth": 120, // printWidth 120
-        "tabWidth": 2,
-        "endOfLine": "auto"
+        "vue": "always",
+        "js": "always",
+        "*": "never"
       }
     ],
+//    "import/extensions": [ "error", "always", { "ignorePackages": true, "index": "never"} ],
+// [ "error", { "js": "always", "vue": "always"} ],  => js 생략해도 에러가 나지 않음.... 왜?
+// [ "error", "always", { "js": "never" } ],  => js를 붙이든 안 붙이든 모두 에러..
+// [ "error", "never", { "js": "always" } ],  => js를 붙이든 안 붙이든 모두 괜찮.   아니.. 머지?
     // 추가 규칙
     "no-void": "off",
     "no-param-reassign": "off", // 함수 재할당 OFF
     "no-use-before-define": "off", // 선언전 함수 사용 금지 OFF
     "camelcase": "off", // camelcase 사용 가능
-//    "import/extensions": "off", // 확장자 표시 OFF
-    "import/no-unresolved": "off" // 존재하는 모듈 확인 OFF
+    "import/no-unresolved": "off", // 존재하는 모듈 확인 OFF
+//    "no-shadow": "off", // 변수 중복 OFF
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true, // 싱글 쿼트 사용
+        "semi": false, // 세미콜론을 사용하지 않음
+        "trailingComma": "all", // "none": 후행 comma 불가, "es5": ES5에서 가능하다면 허용, "all": 마지막에 comma 안 적으면 에러.
+        "printWidth": 120, // printWidth 120
+        "tabWidth": 2,
+        "endOfLine": "auto",
+        "arrowParens": "avoid"    // 생략 가능 할 때는 생략
+      }
+    ]
+
   },
   "parserOptions": {
     "parser": "@babel/eslint-parser",

@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('counter', () => {
+const useCounterStore = defineStore('counter', () => {
   // ref는 state가 됨.
   const count = ref(0)
 
@@ -10,9 +10,11 @@ export const useCounterStore = defineStore('counter', () => {
 
   // function은 actions가 됨.
   function increment() {
-    console.log(`incrementing count from ${count.value} to ${count.value + 1}`);
-    count.value++
+    console.log(`incrementing count from ${count.value} to ${count.value + 1}`)
+    count.value += 1
   }
 
   return { count, doubleCount, increment }
 })
+
+export default useCounterStore

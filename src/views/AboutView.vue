@@ -1,36 +1,34 @@
 <script setup>
-  import { ref, onMounted } from 'vue'
-  import { useRoute } from 'vue-router'
-  import { storeToRefs } from 'pinia'
-  import { useCounterStore} from '@/stores/counter.js'
-  import { useLoginStore } from '@/stores/login.js';
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { storeToRefs } from 'pinia'
+import useCounterStore from '@/stores/counter.js'
+import useLoginStore from '@/stores/login.js'
 
-
-  onMounted(() => {
-    console.log('mounted')
-  });
+onMounted(() => {
+  console.log('mounted')
+})
 
 // export default {
 //   const route = useRoute()
-  const counterStore = useCounterStore()
-  const loginStore = useLoginStore()
+const counterStore = useCounterStore()
+const loginStore = useLoginStore()
 
-  const { count } = storeToRefs(counterStore)
-  const { accntId, userInfo } = storeToRefs(loginStore)
+const { count } = storeToRefs(counterStore)
+const { accntId, userInfo } = storeToRefs(loginStore)
 
-  const increment = () => {
-    console.log('asefsaf')
-    counterStore.increment()
-  }
+const increment = () => {
+  console.log('asefsaf')
+  counterStore.increment()
+}
 
-  const decrement = () => {
-    counterStore.decrement()
-  }
+const decrement = () => {
+  counterStore.decrement()
+}
 
-  const login = () => {
-    loginStore.login()
-
-  }
+const login = () => {
+  loginStore.login()
+}
 
 // }
 </script>
@@ -48,10 +46,7 @@
   </div>
 </template>
 
-<script>
-
-
-</script>
+<script></script>
 
 <style>
 @media (min-width: 1024px) {
