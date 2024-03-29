@@ -17,6 +17,11 @@ export default defineConfig({
         changeOrigin: true,
         // rewrite: (path) => path.replace(/^\/api/, '')
       },
+      '/api': {
+        target: `15.164.225.22:8088`,
+        changeOrigin: true,
+        // rewrite: (path) => path.replace(/^\/api/, '')
+      },
     },
   },
   plugins: [

@@ -46,11 +46,12 @@ yarn dev
 ## 파일 명명 규칙
 ### Component Vue 파일, Page View Vue 파일
 - PascalCase 작성
-  - ex) MyComponent.vue, MyPage.vue
+  - i.e. MyComponent.vue, MyPage.vue
 - import 시에는 PascalCase로 작성
-  - ex) import MyComponent from './MyComponent.vue'
+  - i.e. import MyComponent from './MyComponent.vue'
 - Vue 파일 내에서 import 후 Html에 태그는 kebab-case로 작성
-  - ex) MyComponent.vue -> <my-component></my-component> 또는 <my-component />
+  - i.e. MyComponent.vue -> <my-component></my-component> 또는 <my-component />
+- store 파일은 use...Store 식으로 명명한다.
 
 ### javascript 파일
 - Defalut export가 함수 일 경우, camelCase로 작성
@@ -58,6 +59,9 @@ yarn dev
 - Singleton/function library/ bare Object 인 경우, PascalCase로 작성
   - 파일명은 함수명과 동일하게 작성
 - import 시에는 default export 명에 맞춰서 작성
+- store의 ID는 use...Store를 제거한 camelCase로 작성
+  - i.e. useMyGoodsStore -> myGoods
+
 
 
 
@@ -68,6 +72,9 @@ yarn dev
 1. import 시 경로는 '@'를 이용하여, 절대경로를 사용한다.
 2. import 시 확장자는 언제나 명시 해 준다.
 3. index.js 일 경우에도 생략하지 않고 명시 해 준다.
+4. index.js에서 export default를 사용했을 때, import 명은 index명이 아닌 폴더명으로 처리한다.
+   - i.e. import MyComponent from '@/components/MyComponent/index.js'
+ 
 
 
 # Not yet

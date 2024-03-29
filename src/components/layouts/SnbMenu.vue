@@ -1,16 +1,41 @@
 <script setup>
-import { ref } from 'vue'
+// --- || import vue lib              || ------------------------------- //
+import { onMounted, ref } from 'vue'
 
-const items = ref([
-  { icon: 'mdi-home', title: 't-1' },
-  { icon: 'mdi-account', title: 't-2' },
-  { icon: 'mdi-settings', title: 't-3' }
-])
+// --- || import design lib           || ------------------------------ //
+
+// --- || import Opensource lib       || ------------------------------ //
+import { storeToRefs } from 'pinia'
+
+// --- || import project constants    || ------------------------------ //
+
+// --- || import project lib          || ------------------------------ //
+
+import useMenuStore from '@/stores/basis/useMenuStore.js'
+
+// --- || Variable Setup              || ------------------------------ //
+const menuStore = useMenuStore()
+
+const { menus } = storeToRefs(menuStore)
+
+// --- || Lifecycle Hook              || ------------------------------ //
+
+onMounted(() => {
+  console.log('mounted')
+  menuStore.getMenus()
+})
+
+// --- || Methods                     || ------------------------------ //
+/** 로그인 처리 */
+
+/** Popup Methods */
+
+/** Callback Methods */
 </script>
 
 <template>
   <v-list>
-    <v-list-item v-for="(item, i) in items" :key="i" color="primary" subtitle="subTitle~~" link>
+    <v-list-item v-for="(item, i) in menus" :key="i" color="primary" subtitle="subTitle~~" link>
       <v-icon :icon="item.icon" />{{ item.title }}
     </v-list-item>
   </v-list>

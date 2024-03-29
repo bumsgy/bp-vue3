@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import useCounterStore from '@/stores/counter.js'
-import useLoginStore from '@/stores/login.js'
+import useLoginStore from '@/stores/basis/useLoginStore.js'
 
 onMounted(() => {
   console.log('mounted')

@@ -8,7 +8,7 @@
  * (Copyright 2021. NMPLUS Co., Ltd. All rights reserved | Confidential)
  */
 import router from '@/router/index.js'
-import useLoginStore from '@/stores/login.js'
+import useLoginStore from '@/stores/basis/useLoginStore.js'
 import pinia from '@/plugins/encStore.js'
 
 router.beforeEach((to, from, next) => {

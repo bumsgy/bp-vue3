@@ -7,15 +7,3 @@
  * It is an infringement of intellectual property rights of NMPLUS Corporation.
  * (Copyright 2021. NMPLUS Co., Ltd. All rights reserved | Confidential)
  */
-import { createApp } from 'vue'
-import App from './App.vue'
-
-import registerPlugins from '@/plugins/index.js'
-
-const app = createApp(App)
-
-registerPlugins(app)
-
-app.mount('#app')
-
-// TODO 새로고침 시 복호화 값 가져와서, 토큰 값 헤더 셋팅.....
